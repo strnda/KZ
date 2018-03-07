@@ -26,15 +26,18 @@ ggplot(dta.melt) +
   labs(x = 'Datum', y = 'Hodnota', title = 'Zakladni zobrazeni velicin')
 
 ggplot(dta.melt) +
-  geom_boxplot(aes(x = DTM, y = value, group = variable, fill = variable), show.legend = F) +
+  geom_boxplot(aes(x = variable, y = value, group = variable, fill = variable), show.legend = F, outlier.fill = NA, outlier.shape = 21, outlier.size = .75) +
   scale_fill_manual(values = c('royalblue', 'orange', 'steelblue', 'firebrick4', 'firebrick1', 'firebrick')) +
   facet_wrap(~variable, scales = 'free', nrow = 1) +
   theme_bw() +
-  labs(x = '', y = 'Hodnota', title = 'Boxplot')
+  labs(x = '', y = 'Hodnota', title = 'Boxplot') + 
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
 
 ggplot(dta.melt) +
-  geom_histogram(aes(x = value, group = variable, fill = variable), colour = 'grey25', show.legend = F) +
+  geom_histogram(aes(x = value, group = variable, fill = variable), bins = 35, colour = 'black', show.legend = F) +
   scale_fill_manual(values = c('royalblue', 'orange', 'steelblue', 'firebrick4', 'firebrick1', 'firebrick')) +
   facet_wrap(~variable, scales = 'free', nrow = 2) +
   theme_bw() +
-  labs(x = '', y = 'Hodnota', title = 'Histogram')
+  labs(x = 'Hodnota', y = 'Četnost', title = 'Histogram')
