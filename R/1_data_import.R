@@ -1,4 +1,4 @@
-lop <- c('data.table', 'ggplot2')
+lop <- c('data.table', 'ggplot2', 'ggpmisc')
 
 to.instal <- lop[which(!lop %in% installed.packages()[,'Package'])]
 
