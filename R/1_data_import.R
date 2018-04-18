@@ -1,4 +1,4 @@
-lop <- c('data.table', 'ggplot2', 'ggpmisc')
+lop <- c('data.table', 'ggplot2', 'ggpmisc', 'hydroGOF')
 
 to.instal <- lop[which(!lop %in% installed.packages()[,'Package'])]
 
