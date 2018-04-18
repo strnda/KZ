@@ -17,6 +17,8 @@ model <- bil.optimize(bil)
 
 bil.get.values(bil)$params
 
+NSE(model$RM,model$R)
+
 ggplot(data = model) +
   geom_line(aes(x = DTM, y = R, colour = factor(1))) +
   geom_line(aes(x = DTM, y = RM, colour = factor(2))) +
