@@ -9,7 +9,8 @@ lapply(lop, library, character.only = T)
 id <- '01048000'
 year <- 1945
 
-dta <- as.data.table(read.fwf(sprintf('ftp://hydrology.nws.noaa.gov/pub/gcip/mopex/US_Data/Us_438_Daily/%s.dly', id), widths = c(8,10,10,10,10,10)))
+dta <- as.data.table(read.fwf(sprintf('ftp://nero.hwr.arizona.edu/mopex/MOPEX_daily/%s.dly', id), 
+                              widths = c(8, 10, 10, 10, 10, 10)))
 names(dta) <- c('DTM', 'P', 'E', 'R', 'Tmax', 'Tmin')
 dta <- dta[, `:=`(DTM = as.Date(gsub(' ','0', DTM), format = '%Y%m%d'), 
                   T = rowMeans(.SD)),
