@@ -14,7 +14,7 @@ DR <- dta[, mean(R), by = DEC]
 meaR <- dta[, mean(R)]
 DR[, V1 / meaR, by = DEC]
 
-ma <- 365
+ma <- 12
 ggplot(data = dta.melt, aes(x = DTM, y = value, group = variable, color = variable)) +
   scale_color_manual(values = c('royalblue', 'orange', 'steelblue', 'firebrick4', 'firebrick1', 'firebrick')) +
   geom_line() +
