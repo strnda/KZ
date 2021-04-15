@@ -37,7 +37,9 @@ for (i in 1:length(prec)){
   }
 }
 
-dta.heat <- data.table(rbind(melt(d.RM),melt(d.BF),melt(d.BFI)))
+dta.heat <- data.table(rbind(reshape2::melt(d.RM),
+                             reshape2::melt(d.BF),
+                             reshape2::melt(d.BFI)))
 dta.heat <- dta.heat[, id := rep(c('d.RM', 'd.BF', 'd.BFI'), each = (dim(dta.heat)[1])/3)]
 
 ggplot(data = dta.heat) + 
