@@ -6,7 +6,7 @@ library(bilan)
 
 ?bilan
 
-bil <- bil.new('d')
+bil <- bil.new('m')
 bil.set.values(bil, dta)
 bil.pet(bil,'latit', latitude = 50)
 bil.set.params.init(bil, list(Spa = 115, Grd = .095))
