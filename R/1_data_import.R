@@ -1,12 +1,28 @@
-lop <- c('data.table', 'ggplot2', 'ggpmisc', 'hydroGOF', 'Rcpp')
+if (as.numeric(x = R.Version()$minor) < 2.2) {
+  
+  if (!require(installr)) {
+    
+    install.packages("installr")
+  }
+  
+  installr::install.R(silent = TRUE)
+  
+  q()
+}
+#####
+lop <- c("data.table", "curl", "ggplot2", "DEoptim", "hydroGOF")
 
-to.instal <- lop[which(!lop %in% installed.packages()[,'Package'])]
+to_instal <- lop[which(x = !(lop %in% installed.packages()[,"Package"]))]
 
-if(length(to.instal) != 0) install.packages(to.instal)
+if(length(to_instal) != 0) {
+  
+  install.packages(to_instal)
+}
 
-temp <- lapply(lop, library, character.only = T)
+temp <- lapply(X = lop, 
+               FUN = library, 
+               character.only = T)
 rm(temp)
-
 
 
 ## data dostupna z https://owncloud.cesnet.cz/index.php/s/zMUkK2EYnrKlmtW
