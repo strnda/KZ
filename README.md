@@ -1,3 +1,3 @@
-# Klimatické změny a vodní zdroje - LS 20/21
+# Klimatické změny a vodní zdroje - LS 22/23
 
-Cvičení kurzu Klimatické změny a vodní zdroje - ZVZ07E
+Cvičení kurzu Klimatické změny a vodní zdroje
