@@ -10,7 +10,7 @@ if (as.numeric(x = R.Version()$minor) < 2.2) {
   q()
 }
 #####
-lop <- c("data.table", "curl", "ggplot2", "DEoptim", "hydroGOF")
+lop <- c("data.table", "ggplot2", "ggpmisc", "hydroGOF", "Rcpp")
 
 to_instal <- lop[which(x = !(lop %in% installed.packages()[,"Package"]))]
 
